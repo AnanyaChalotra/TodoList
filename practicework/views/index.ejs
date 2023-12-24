@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 
+    <%= title %>
+    </title>    
+</head>
+<body>
+    <p style="font-size: 20px;">Rendered using ejs
+    </p>
+    <div>
+        <ul style="list-style-type: square;">
+            <% for (let i of contact_list) { %> 
+            <li>
+                <p><%= i.name %></p>
+                <p><%= i.number %></p>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <div>
+        <form action="/create-contact" method="post">
+            <input type="text" name="name" required>
+            <input type="text" name="number" required>
+            <button type="submit">Add Contact</button>
+        </form>
+    </div>
+</body>
+</html>
